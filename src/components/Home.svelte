@@ -2,6 +2,7 @@
 	import ExercisesList from '../components/ExercisesList.svelte';
 	import Header from '../components/Header.svelte';
 
+	let scheduledExercises = [{ name: 'Chest & back' }];
 	let favoriteExercises = [
 		{ name: 'Full body' },
 		{ name: 'Chest & back' },
@@ -11,9 +12,5 @@
 
 <Header />
 
-<div class="mb-8">
-	<h2 class="mb-2 font-bold">Scheduled today</h2>
-	<div class="border-2 border-black p-4 mb-4 text-2xl">Chest & back</div>
-</div>
-
+<ExercisesList title={'Scheduled today'} exercises={scheduledExercises} />
 <ExercisesList title={'Favourites'} exercises={favoriteExercises} />
