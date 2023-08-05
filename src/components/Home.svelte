@@ -1,6 +1,12 @@
 <script>
 	import ExercisesList from '../components/ExercisesList.svelte';
 	import Header from '../components/Header.svelte';
+
+	let favoriteExercises = [
+		{ name: 'Full body' },
+		{ name: 'Chest & back' },
+		{ name: 'Arms & shoulders' }
+	];
 </script>
 
 <Header />
@@ -10,4 +16,4 @@
 	<div class="border-2 border-black p-4 mb-4 text-2xl">Chest & back</div>
 </div>
 
-<ExercisesList title={'Favourites'} />
+<ExercisesList title={'Favourites'} exercises={favoriteExercises} />
