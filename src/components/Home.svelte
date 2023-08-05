@@ -1,6 +1,6 @@
 <div class="header">
 	<h1>Workout app</h1>
-	<div role="doc-subtitle">Subheading</div>
+	<div role="doc-subtitle">Friday 4th of August</div>
 </div>
 
 <div>
