@@ -3,8 +3,8 @@
 	import Navbar from '../components/Navbar.svelte';
 </script>
 
-<div class="h-screen relative">
-	<main class="p-8 mb-16">
+<div class="flex h-screen flex-col">
+	<main class="h-full p-8 overflow-y-scroll">
 		<Home />
 	</main>
 	<Navbar />

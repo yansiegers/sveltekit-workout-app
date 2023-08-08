@@ -1,6 +1,4 @@
-<div
-	class="border-t-2 border-black text-center flex justify-evenly fixed bottom-0 w-screen bg-white"
->
+<div class="border-t-2 border-black text-center flex justify-evenly bg-white">
 	<div class="p-4 w-16 h-16"><i class="fa-solid fa-dumbbell fa-lg" /></div>
 	<div class="p-4 w-16 h-16"><i class="fa-solid fa-calendar fa-lg" /></div>
 	<div class="p-4 w-16 h-16 border-2 border-black absolute bottom-4 bg-white">
