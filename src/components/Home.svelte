@@ -1,9 +1,9 @@
 <script>
-	import ExercisesList from '../components/ExercisesList.svelte';
+	import WorkoutRoutinesList from './WorkoutRoutinesList.svelte';
 	import Header from '../components/Header.svelte';
 
-	let scheduledExercises = [{ name: 'Chest & back' }];
-	let favoriteExercises = [
+	let scheduledWorkoutRoutines = [{ name: 'Chest & back' }];
+	let favoriteWorkoutRoutines = [
 		{ name: 'Full body' },
 		{ name: 'Chest & back' },
 		{ name: 'Arms & shoulders' }
@@ -12,5 +12,5 @@
 
 <Header />
 
-<ExercisesList title={'Scheduled today'} exercises={scheduledExercises} />
-<ExercisesList title={'Favourites'} exercises={favoriteExercises} />
+<WorkoutRoutinesList title={'Scheduled today'} workoutRoutines={scheduledWorkoutRoutines} />
+<WorkoutRoutinesList title={'Favourites'} workoutRoutines={favoriteWorkoutRoutines} />
