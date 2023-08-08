@@ -11,7 +11,12 @@
 
 <Header heading="Schedule" />
 
-<WorkoutRoutinesList title={'Monday'} workoutRoutines={mondayWorkoutRoutines} />
-<WorkoutRoutinesList title={'Wednesday'} workoutRoutines={wednesdayWorkoutRoutine} />
-<WorkoutRoutinesList title={'Friday'} workoutRoutines={fridayWorkoutRoutine} />
-<WorkoutRoutinesList title={'Other workouts'} workoutRoutines={otherWorkoutRoutines} />
+<section class="mb-24">
+	<WorkoutRoutinesList title={'Monday'} workoutRoutines={mondayWorkoutRoutines} />
+	<WorkoutRoutinesList title={'Wednesday'} workoutRoutines={wednesdayWorkoutRoutine} />
+	<WorkoutRoutinesList title={'Friday'} workoutRoutines={fridayWorkoutRoutine} />
+</section>
+
+<section>
+	<WorkoutRoutinesList title={'Other workouts'} workoutRoutines={otherWorkoutRoutines} />
+</section>
