@@ -9,10 +9,10 @@
 <table class="w-full">
 	{#each exercises as exercise}
 		<tr>
-			<td><Icon name="grip-vertical" /></td>
-			<td>{exercise.sets}x {exercise.reps}</td>
-			<td>{exercise.name}</td>
-			<td>{exercise.weight}</td>
+			<td class="pb-6"><Icon name="grip-vertical" /></td>
+			<td class="pb-6">{exercise.sets}x {exercise.reps}</td>
+			<td class="pb-6">{exercise.name}</td>
+			<td class="pb-6">{exercise.weight}</td>
 		</tr>
 	{/each}
 </table>
