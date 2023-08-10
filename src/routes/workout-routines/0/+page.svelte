@@ -1,9 +1,16 @@
 <script>
 	import Header from '../../../components/Header.svelte';
-	import Icon from '../../../components/Icon.svelte';
+	import WorkoutRoutinePart from '../../../components/WorkoutRoutinePart.svelte';
 
 	let workoutRoutine = { id: 0, name: 'Chest & back' };
 	let subHeading = 'Overview Friday 4th of August';
+
+	let exercises = [
+		{ sets: 4, reps: 10, name: 'Shoulder Press', weight: 24.1 },
+		{ sets: 4, reps: 10, name: 'Pec Fly', weight: 59 },
+		{ sets: 4, reps: 10, name: 'Reverse Lat Pull', weight: 41.3 },
+		{ sets: 4, reps: 10, name: 'Bench Press', weight: 40 }
+	];
 </script>
 
 <div class="flex h-screen flex-col">
@@ -11,15 +18,7 @@
 		<Header heading={workoutRoutine.name} {subHeading} />
 
 		<div>
-			<div class="mb-2 font-bold">Workout</div>
-			<table class="w-full">
-				<tr>
-					<td><Icon name="grip-vertical" /></td>
-					<td>4x 10</td>
-					<td>Shoulder Press</td>
-					<td>24,1</td>
-				</tr>
-			</table>
+			<WorkoutRoutinePart {exercises} />
 		</div>
 	</main>
 </div>
