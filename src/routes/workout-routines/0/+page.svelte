@@ -22,7 +22,11 @@
 		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Shoulder Press', weight: 24.1 },
 		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Pec Fly', weight: 59 },
 		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Reverse Lat Pull', weight: 41.3 },
-		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Bench Press', weight: 40 }
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Bench Press', weight: 40 },
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Incline Press', weight: 45.4 },
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Supine Press', weight: 55.4 },
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Decline Press', weight: 40 },
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Lat Pulls', weight: 40 }
 	];
 	let warmingUpExercises: WarmingUpExercise[] = [
 		{ type: 'warmingUpExercise', distance: 500, name: 'Rowing' }
