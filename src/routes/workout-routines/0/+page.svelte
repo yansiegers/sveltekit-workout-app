@@ -30,12 +30,18 @@
 </script>
 
 <div class="flex h-screen flex-col">
-	<main class="h-full overflow-y-scroll p-8">
+	<main class=" h-full overflow-y-scroll p-8">
 		<Header heading={workoutRoutine.name} {subHeading} />
 
-		<div>
+		<div class="mb-24">
 			<OrderableExercisesList title="Warming up" exercises={warmingUpExercises} />
 			<OrderableExercisesList title="Workout" exercises={workoutExercises} />
 		</div>
+
+		<a
+			class="absolute bottom-2 left-1/2 border-2 border-black bg-white px-5 py-4 text-2xl uppercase"
+			style="transform: translate(-50%, -50%);"
+			href="?">Start</a
+		>
 	</main>
 </div>
