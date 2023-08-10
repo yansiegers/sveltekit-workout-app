@@ -2,11 +2,11 @@
 	import Header from './Header.svelte';
 	import WorkoutRoutinesList from './WorkoutRoutinesList.svelte';
 
-	let mondayWorkoutRoutines = [{ name: 'Legs' }];
-	let wednesdayWorkoutRoutine = [{ name: 'Arms & shoulders' }];
-	let fridayWorkoutRoutine = [{ name: 'Chest & back' }];
+	let mondayWorkoutRoutines = [{ id: 0, name: 'Legs' }];
+	let wednesdayWorkoutRoutine = [{ id: 0, name: 'Arms & shoulders' }];
+	let fridayWorkoutRoutine = [{ id: 0, name: 'Chest & back' }];
 
-	let otherWorkoutRoutines = [{ name: 'Full body' }];
+	let otherWorkoutRoutines = [{ id: 0, name: 'Full body' }];
 </script>
 
 <Header heading="Schedule" />

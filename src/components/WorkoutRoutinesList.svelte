@@ -2,7 +2,7 @@
 	import WorkoutRoutine from './WorkoutRoutine.svelte';
 
 	export let title: string;
-	export let workoutRoutines: { name: string }[];
+	export let workoutRoutines: { id: number; name: string }[];
 </script>
 
 <div class="mb-8">

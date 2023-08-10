@@ -2,11 +2,11 @@
 	import WorkoutRoutinesList from './WorkoutRoutinesList.svelte';
 	import Header from '../components/Header.svelte';
 
-	let scheduledWorkoutRoutines = [{ name: 'Chest & back' }];
+	let scheduledWorkoutRoutines = [{ id: 0, name: 'Chest & back' }];
 	let favoriteWorkoutRoutines = [
-		{ name: 'Full body' },
-		{ name: 'Chest & back' },
-		{ name: 'Arms & shoulders' }
+		{ id: 0, name: 'Full body' },
+		{ id: 0, name: 'Chest & back' },
+		{ id: 0, name: 'Arms & shoulders' }
 	];
 </script>
 
