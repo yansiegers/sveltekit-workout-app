@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Icon from '../components/Icon.svelte';
 
+	export let title: string;
 	export let exercises: { sets: number; reps: number; name: string; weight: number }[];
 </script>
 
-<div class="mb-2 font-bold">Workout</div>
+<div class="mb-2 font-bold">{title}</div>
 <table class="w-full">
 	{#each exercises as exercise}
 		<tr>
