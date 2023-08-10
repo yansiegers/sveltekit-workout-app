@@ -31,7 +31,7 @@
 
 <div class="flex h-screen flex-col">
 	<main class=" h-full overflow-y-scroll p-8">
-		<Header heading={workoutRoutine.name} {subHeading} />
+		<Header heading={workoutRoutine.name} {subHeading} exit={true} href="/" />
 
 		<div class="mb-24">
 			<OrderableExercisesList title="Warming up" exercises={warmingUpExercises} />
