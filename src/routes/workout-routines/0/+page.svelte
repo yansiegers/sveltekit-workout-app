@@ -1,15 +1,31 @@
-<script>
+<script lang="ts">
 	import Header from '../../../components/Header.svelte';
 	import OrderableExercisesList from '../../../components/OrderableExercisesList.svelte';
+
+	interface WorkoutExercise {
+		type: 'workoutExercise';
+		sets: number;
+		reps: number;
+		name: string;
+		weight: number;
+	}
+	interface WarmingUpExercise {
+		type: 'warmingUpExercise';
+		distance: number;
+		name: string;
+	}
 
 	let workoutRoutine = { id: 0, name: 'Chest & back' };
 	let subHeading = 'Overview Friday 4th of August';
 
-	let workoutExercises = [
-		{ sets: 4, reps: 10, name: 'Shoulder Press', weight: 24.1 },
-		{ sets: 4, reps: 10, name: 'Pec Fly', weight: 59 },
-		{ sets: 4, reps: 10, name: 'Reverse Lat Pull', weight: 41.3 },
-		{ sets: 4, reps: 10, name: 'Bench Press', weight: 40 }
+	let workoutExercises: WorkoutExercise[] = [
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Shoulder Press', weight: 24.1 },
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Pec Fly', weight: 59 },
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Reverse Lat Pull', weight: 41.3 },
+		{ type: 'workoutExercise', sets: 4, reps: 10, name: 'Bench Press', weight: 40 }
+	];
+	let warmingUpExercises: WarmingUpExercise[] = [
+		{ type: 'warmingUpExercise', distance: 500, name: 'Rowing' }
 	];
 </script>
 
@@ -18,6 +34,7 @@
 		<Header heading={workoutRoutine.name} {subHeading} />
 
 		<div>
+			<OrderableExercisesList title="Warming up" exercises={warmingUpExercises} />
 			<OrderableExercisesList title="Workout" exercises={workoutExercises} />
 		</div>
 	</main>
