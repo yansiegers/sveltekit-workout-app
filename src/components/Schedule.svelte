@@ -6,7 +6,15 @@
 	let wednesdayWorkoutRoutine = [{ id: 0, name: 'Arms & shoulders' }];
 	let fridayWorkoutRoutine = [{ id: 0, name: 'Chest & back' }];
 
-	let otherWorkoutRoutines = [{ id: 0, name: 'Full body' }];
+	let otherWorkoutRoutines = [
+		{ id: 0, name: 'Full body' },
+		{ id: 0, name: 'Arms' },
+		{ id: 0, name: 'Chest' },
+		{ id: 0, name: 'Back' },
+		{ id: 0, name: 'Shoulders' },
+		{ id: 0, name: 'Core' },
+		{ id: 0, name: 'Back' }
+	];
 </script>
 
 <Header heading="Schedule" />
