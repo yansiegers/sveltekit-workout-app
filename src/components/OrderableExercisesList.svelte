@@ -12,7 +12,7 @@
 			<td class="pb-6"><Icon name="grip-vertical" /></td>
 			<td class="pb-6">{exercise.sets}x {exercise.reps}</td>
 			<td class="pb-6">{exercise.name}</td>
-			<td class="pb-6">{exercise.weight}</td>
+			<td class="pb-6">{exercise.weight.toLocaleString()}</td>
 		</tr>
 	{/each}
 </table>
