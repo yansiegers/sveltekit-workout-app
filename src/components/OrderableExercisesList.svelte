@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Icon from '../components/Icon.svelte';
+	import Icon from './Icon.svelte';
 
 	export let title: string;
 	export let exercises: { sets: number; reps: number; name: string; weight: number }[];

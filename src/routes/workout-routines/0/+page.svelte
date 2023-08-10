@@ -1,6 +1,6 @@
 <script>
 	import Header from '../../../components/Header.svelte';
-	import WorkoutRoutinePart from '../../../components/WorkoutRoutinePart.svelte';
+	import OrderableExercisesList from '../../../components/OrderableExercisesList.svelte';
 
 	let workoutRoutine = { id: 0, name: 'Chest & back' };
 	let subHeading = 'Overview Friday 4th of August';
@@ -18,7 +18,7 @@
 		<Header heading={workoutRoutine.name} {subHeading} />
 
 		<div>
-			<WorkoutRoutinePart title="Workout" exercises={workoutExercises} />
+			<OrderableExercisesList title="Workout" exercises={workoutExercises} />
 		</div>
 	</main>
 </div>
