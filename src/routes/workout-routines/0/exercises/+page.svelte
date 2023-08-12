@@ -17,10 +17,8 @@
 </script>
 
 <div class="flex h-screen flex-col">
-	<main class=" h-full overflow-y-scroll p-8">
+	<main class="h-full overflow-y-scroll p-8">
 		<Header heading={exercise.name} {subHeading} exit={true} href="/" />
-
-		<FloatingButton text="Next exercise!" href="?" />
 
 		<div class="mb-10">
 			<p class="mb-3 text-center">{exercise.sets}x {exercise.reps} repetitions</p>
@@ -42,7 +40,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div class="mb-32">
 			<p class="mb-3 text-center">Current weight</p>
 			<div class=" flex items-center justify-center gap-4">
 				<div class="border-2 border-black px-5 py-2"><Icon name="minus" size="xl" /></div>
@@ -54,5 +52,7 @@
 				<div class="border-2 border-black px-5 py-2"><Icon name="plus" size="xl" /></div>
 			</div>
 		</div>
+
+		<FloatingButton text="Next exercise!" href="?" />
 	</main>
 </div>
