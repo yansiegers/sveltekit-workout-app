@@ -12,7 +12,8 @@
 		name: 'Shoulder Press',
 		weight: 24.1
 	};
-	let sets = [24.1, 24.1];
+	let finishedSets = [24.1, 24.1];
+	let setsToGo = exercise.sets - finishedSets.length;
 </script>
 
 <div class="flex h-screen flex-col">
@@ -24,20 +25,19 @@
 		<div class="mb-10">
 			<p class="mb-3 text-center">{exercise.sets}x {exercise.reps} repetitions</p>
 			<div class="flex flex-wrap justify-center gap-4">
-				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-					<span><Icon name="check" size="2xl" /></span>
-					<span>{sets[0].toLocaleString()} kg</span>
-				</div>
-				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-					<span><Icon name="check" size="2xl" /></span>
-					<span>{sets[1].toLocaleString()} kg</span>
-				</div>
-				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-					<span class="text-2xl">3</span>
-				</div>
-				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-					<span class="text-2xl">4</span>
-				</div>
+				{#each finishedSets as weight}
+					<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
+						<span><Icon name="check" size="2xl" /></span>
+						<span>{weight.toLocaleString()} kg</span>
+					</div>
+				{/each}
+
+				{#each Array(setsToGo) as _, i}
+					<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
+						<span class="text-2xl">{i + 1 + setsToGo}</span>
+					</div>
+				{/each}
+
 				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
 					<span><Icon name="plus" size="2xl" /></span>
 				</div>
