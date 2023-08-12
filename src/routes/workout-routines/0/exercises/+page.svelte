@@ -13,7 +13,7 @@
 		weight: 24.1
 	};
 	let finishedSets = [24.1, 24.1];
-	let setsToGo = exercise.sets - finishedSets.length;
+	let setsCount = finishedSets.length > exercise.sets ? finishedSets.length : exercise.sets;
 </script>
 
 <div class="flex h-screen flex-col">
@@ -25,16 +25,14 @@
 		<div class="mb-10">
 			<p class="mb-3 text-center">{exercise.sets}x {exercise.reps} repetitions</p>
 			<div class="flex flex-wrap justify-center gap-4">
-				{#each finishedSets as weight}
+				{#each Array(setsCount) as _, i}
 					<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-						<span><Icon name="check" size="2xl" /></span>
-						<span>{weight.toLocaleString()} kg</span>
-					</div>
-				{/each}
-
-				{#each Array(setsToGo) as _, i}
-					<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-						<span class="text-2xl">{i + 1 + setsToGo}</span>
+						{#if finishedSets.length > i}
+							<span><Icon name="check" size="2xl" /></span>
+							<span>{finishedSets[i].toLocaleString()} kg</span>
+						{:else if finishedSets.length <= i}
+							<span class="text-2xl">{i + 1}</span>
+						{/if}
 					</div>
 				{/each}
 
