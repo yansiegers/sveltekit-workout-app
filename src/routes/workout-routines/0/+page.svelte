@@ -45,7 +45,7 @@
 		<a
 			class="absolute bottom-2 left-1/2 border-2 border-black bg-white px-5 py-4 text-2xl uppercase"
 			style="transform: translate(-50%, -50%);"
-			href="?">Start</a
+			href="/workout-routines/0/exercises">Start</a
 		>
 	</main>
 </div>
