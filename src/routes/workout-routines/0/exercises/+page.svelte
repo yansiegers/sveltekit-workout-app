@@ -2,10 +2,11 @@
 	import FloatingButton from '../../../../components/FloatingButton.svelte';
 	import Header from '../../../../components/Header.svelte';
 	import Icon from '../../../../components/Icon.svelte';
+	import WeightInput from '../../../../components/WeightInput.svelte';
 
 	let subHeading = 'Up next: Pec Fly';
 
-	let exercise = {
+	let exercise: WorkoutExercise = {
 		type: 'workoutExercise',
 		sets: 4,
 		reps: 10,
@@ -14,6 +15,14 @@
 	};
 	let finishedSets = [24.1, 24.1];
 	let setsCount = finishedSets.length > exercise.sets ? finishedSets.length : exercise.sets;
+
+	interface WorkoutExercise {
+		type: 'workoutExercise';
+		sets: number;
+		reps: number;
+		name: string;
+		weight: number;
+	}
 </script>
 
 <div class="flex h-screen flex-col">
@@ -41,16 +50,7 @@
 		</div>
 
 		<div class="mb-32">
-			<p class="mb-3 text-center">Current weight</p>
-			<div class=" flex items-center justify-center gap-4">
-				<div class="border-2 border-black px-5 py-2"><Icon name="minus" size="xl" /></div>
-				<input
-					class="w-32 border-2 border-black px-4 py-3 text-center text-4xl"
-					type="text"
-					value={exercise.weight.toLocaleString()}
-				/>
-				<div class="border-2 border-black px-5 py-2"><Icon name="plus" size="xl" /></div>
-			</div>
+			<WeightInput {exercise} />
 		</div>
 
 		<FloatingButton text="Next exercise!" href="?" />
