@@ -3,8 +3,16 @@
 	import Header from '../../../../components/Header.svelte';
 	import Icon from '../../../../components/Icon.svelte';
 
-	let exercise = { id: 0, name: 'Shoulder Press' };
 	let subHeading = 'Up next: Pec Fly';
+
+	let exercise = {
+		type: 'workoutExercise',
+		sets: 4,
+		reps: 10,
+		name: 'Shoulder Press',
+		weight: 24.1
+	};
+	let sets = [24.1, 24.1];
 </script>
 
 <div class="flex h-screen flex-col">
@@ -14,15 +22,15 @@
 		<FloatingButton text="Next exercise!" href="?" />
 
 		<div class="mb-10">
-			<p class="mb-3 text-center">4x 10 repetitions</p>
+			<p class="mb-3 text-center">{exercise.sets}x {exercise.reps} repetitions</p>
 			<div class="flex flex-wrap justify-center gap-4">
 				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
 					<span><Icon name="check" size="2xl" /></span>
-					<span>24,1 kg</span>
+					<span>{sets[0].toLocaleString()} kg</span>
 				</div>
 				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
 					<span><Icon name="check" size="2xl" /></span>
-					<span>24,1 kg</span>
+					<span>{sets[1].toLocaleString()} kg</span>
 				</div>
 				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
 					<span class="text-2xl">3</span>
@@ -43,7 +51,7 @@
 				<input
 					class="w-32 border-2 border-black px-4 py-3 text-center text-4xl"
 					type="text"
-					value="24,1"
+					value={exercise.weight.toLocaleString()}
 				/>
 				<div class="border-2 border-black px-5 py-2"><Icon name="plus" size="xl" /></div>
 			</div>
