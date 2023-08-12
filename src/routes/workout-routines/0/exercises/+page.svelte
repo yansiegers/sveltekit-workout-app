@@ -13,34 +13,40 @@
 
 		<FloatingButton text="Next exercise!" href="?" />
 
-		<div class="flex flex-wrap justify-center gap-4">
-			<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-				<span><Icon name="check" size="2xl" /></span>
-				<span>24,1 kg</span>
-			</div>
-			<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-				<span><Icon name="check" size="2xl" /></span>
-				<span>24,1 kg</span>
-			</div>
-			<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-				<span class="text-2xl">3</span>
-			</div>
-			<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-				<span class="text-2xl">4</span>
-			</div>
-			<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
-				<span><Icon name="plus" size="2xl" /></span>
+		<div class="mb-10">
+			<p class="mb-3 text-center">4x 10 repetitions</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
+					<span><Icon name="check" size="2xl" /></span>
+					<span>24,1 kg</span>
+				</div>
+				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
+					<span><Icon name="check" size="2xl" /></span>
+					<span>24,1 kg</span>
+				</div>
+				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
+					<span class="text-2xl">3</span>
+				</div>
+				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
+					<span class="text-2xl">4</span>
+				</div>
+				<div class="flex h-20 w-20 flex-col justify-evenly border-2 border-black text-center">
+					<span><Icon name="plus" size="2xl" /></span>
+				</div>
 			</div>
 		</div>
 
-		<div class="mt-10 flex items-center justify-center gap-4">
-			<div class="border-2 border-black px-5 py-2"><Icon name="minus" size="xl" /></div>
-			<input
-				class="w-32 border-2 border-black px-4 py-3 text-center text-4xl"
-				type="text"
-				value="24,1"
-			/>
-			<div class="border-2 border-black px-5 py-2"><Icon name="plus" size="xl" /></div>
+		<div>
+			<p class="mb-3 text-center">Current weight</p>
+			<div class=" flex items-center justify-center gap-4">
+				<div class="border-2 border-black px-5 py-2"><Icon name="minus" size="xl" /></div>
+				<input
+					class="w-32 border-2 border-black px-4 py-3 text-center text-4xl"
+					type="text"
+					value="24,1"
+				/>
+				<div class="border-2 border-black px-5 py-2"><Icon name="plus" size="xl" /></div>
+			</div>
 		</div>
 	</main>
 </div>
