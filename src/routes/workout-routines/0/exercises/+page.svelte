@@ -32,5 +32,15 @@
 				<span><Icon name="plus" size="2xl" /></span>
 			</div>
 		</div>
+
+		<div class="mt-10 flex items-center justify-center gap-4">
+			<div class="border-2 border-black px-5 py-2"><Icon name="minus" size="xl" /></div>
+			<input
+				class="w-32 border-2 border-black px-4 py-3 text-center text-4xl"
+				type="text"
+				value="24,1"
+			/>
+			<div class="border-2 border-black px-5 py-2"><Icon name="plus" size="xl" /></div>
+		</div>
 	</main>
 </div>
