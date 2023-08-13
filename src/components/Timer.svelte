@@ -7,6 +7,12 @@
 	let timeRemaining = restingTime;
 	let interval: NodeJS.Timer;
 
+	let remainingCircleStrokeDashArray: string = '100 100';
+	let remainingCircleStrokeDashOffset: string = '0';
+
+	let restedCircleStrokeDashArray: string = '0 100';
+	let restedCircleStrokeDashOffset: string = '25';
+
 	function start() {
 		console.log('start');
 		interval = setInterval(timer, 1000);
@@ -29,11 +35,11 @@
 
 		var offset = 25;
 
-		restedCircle.style.strokeDasharray = percentageRested + ' ' + (100 - percentageRested);
-		restedCircle.style.strokeDashoffset = offset.toString();
+		restedCircleStrokeDashArray = percentageRested + ' ' + (100 - percentageRested);
+		restedCircleStrokeDashOffset = offset.toString();
 
-		remainingCircle.style.strokeDasharray = percentageRemaining + ' ' + (100 - percentageRemaining);
-		remainingCircle.style.strokeDashoffset = (100 - percentageRested + offset).toString();
+		remainingCircleStrokeDashArray = percentageRemaining + ' ' + (100 - percentageRemaining);
+		remainingCircleStrokeDashOffset = (100 - percentageRested + offset).toString();
 	}
 </script>
 
@@ -52,8 +58,8 @@
 			fill="transparent"
 			stroke="black"
 			stroke-width="6"
-			stroke-dasharray="100 100"
-			stroke-dashoffset="0"
+			stroke-dasharray={remainingCircleStrokeDashArray}
+			stroke-dashoffset={remainingCircleStrokeDashOffset}
 			bind:this={remainingCircle}
 		/>
 
@@ -66,8 +72,8 @@
 			fill="transparent"
 			stroke="black"
 			stroke-width="1"
-			stroke-dasharray="0 100"
-			stroke-dashoffset="25"
+			stroke-dasharray={restedCircleStrokeDashArray}
+			stroke-dashoffset={restedCircleStrokeDashOffset}
 			bind:this={restedCircle}
 		/>
 
