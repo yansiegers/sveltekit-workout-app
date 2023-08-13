@@ -15,9 +15,12 @@
 	let restedCircleStrokeDashArray = '0 100';
 	let restedCircleStrokeDashOffset = 25;
 
+	export let resting = true;
+
 	function timer() {
 		if (timeRemaining <= 0) {
 			clearInterval(interval);
+			resting = false;
 		} else {
 			timeRemaining--;
 		}

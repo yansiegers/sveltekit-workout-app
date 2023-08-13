@@ -31,7 +31,7 @@
 
 		{#if resting}
 			<div class="mb-10 px-8">
-				<Timer />
+				<Timer bind:resting />
 			</div>
 		{:else}
 			<div class="mb-10">
