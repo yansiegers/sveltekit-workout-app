@@ -6,7 +6,7 @@
 	import WeightInput from '../../../../components/WeightInput.svelte';
 
 	let subHeading = 'Up next: Pec Fly';
-	let resting = true;
+	let resting = false;
 
 	let exercise: WorkoutExercise = {
 		type: 'workoutExercise',
@@ -35,7 +35,7 @@
 			</div>
 		{:else}
 			<div class="mb-10">
-				<ExerciseSets {exercise} />
+				<ExerciseSets {exercise} bind:checked={resting} />
 			</div>
 		{/if}
 

@@ -41,8 +41,6 @@
 </script>
 
 <div>
-	<!-- <button on:click={start}>Start</button> -->
-
 	<svg class="donut" viewBox="0 0 42 42">
 		<circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff" />
 
