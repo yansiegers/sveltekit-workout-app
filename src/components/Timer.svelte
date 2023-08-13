@@ -3,7 +3,8 @@
 	let val2D: SVGCircleElement;
 	let totalValue: SVGTextElement;
 
-	let minute = 60;
+	let restingTime = 120;
+	let timeLeft = restingTime;
 	let interval: NodeJS.Timer;
 
 	function start() {
@@ -12,24 +13,24 @@
 	}
 
 	function timer() {
-		if (minute <= 0) {
+		if (timeLeft <= 0) {
 			clearInterval(interval);
 			console.log('interval cleared');
 		} else {
-			minute--;
+			timeLeft--;
 		}
 
-		console.log(minute);
+		console.log(timeLeft);
 
-		let val1 = 60 - minute;
-		let val2 = minute;
+		let val1 = restingTime - timeLeft;
+		let val2 = timeLeft;
 
-		var per1 = (val1 / 60) * 100;
-		var per2 = (val2 / 60) * 100;
+		var per1 = (val1 / restingTime) * 100;
+		var per2 = (val2 / restingTime) * 100;
 
 		var offset = 25;
 
-		totalValue.textContent = minute.toString();
+		// totalValue.textContent = new Date(timeLeft * 1000).toISOString().substring(14, 19);
 
 		val1D.style.strokeDasharray = per1 + ' ' + (100 - per1);
 		val1D.style.strokeDashoffset = offset.toString();
@@ -75,7 +76,7 @@
 
 		<g class="chart-text">
 			<text x="50%" y="50%" class="chart-number" id="totalValue" bind:this={totalValue}>
-				{minute}
+				{new Date(timeLeft * 1000).toISOString().substring(14, 19)}
 			</text>
 		</g>
 	</svg>
