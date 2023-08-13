@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	let restedCircle: SVGCircleElement;
 	let remainingCircle: SVGCircleElement;
 	let timeValue: SVGTextElement;
@@ -12,11 +14,6 @@
 
 	let restedCircleStrokeDashArray = '0 100';
 	let restedCircleStrokeDashOffset = 25;
-
-	function start() {
-		console.log('start');
-		interval = setInterval(timer, 1000);
-	}
 
 	function timer() {
 		if (timeRemaining <= 0) {
@@ -38,6 +35,8 @@
 		remainingCircleStrokeDashArray = percentageRemaining + ' ' + (100 - percentageRemaining);
 		remainingCircleStrokeDashOffset = 100 - percentageRested + offset;
 	}
+
+	onMount(() => (interval = setInterval(timer, 1000)));
 </script>
 
 <div>
