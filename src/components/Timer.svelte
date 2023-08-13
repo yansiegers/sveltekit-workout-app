@@ -7,11 +7,11 @@
 	let timeRemaining = restingTime;
 	let interval: NodeJS.Timer;
 
-	let remainingCircleStrokeDashArray: string = '100 100';
-	let remainingCircleStrokeDashOffset: string = '0';
+	let remainingCircleStrokeDashArray = '100 100';
+	let remainingCircleStrokeDashOffset = 0;
 
-	let restedCircleStrokeDashArray: string = '0 100';
-	let restedCircleStrokeDashOffset: string = '25';
+	let restedCircleStrokeDashArray = '0 100';
+	let restedCircleStrokeDashOffset = 25;
 
 	function start() {
 		console.log('start');
@@ -33,10 +33,10 @@
 		var offset = 25;
 
 		restedCircleStrokeDashArray = percentageRested + ' ' + (100 - percentageRested);
-		restedCircleStrokeDashOffset = offset.toString();
+		restedCircleStrokeDashOffset = offset;
 
 		remainingCircleStrokeDashArray = percentageRemaining + ' ' + (100 - percentageRemaining);
-		remainingCircleStrokeDashOffset = (100 - percentageRested + offset).toString();
+		remainingCircleStrokeDashOffset = 100 - percentageRested + offset;
 	}
 </script>
 
