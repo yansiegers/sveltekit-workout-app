@@ -2,9 +2,11 @@
 	import ExerciseSets from '../../../../components/ExerciseSets.svelte';
 	import FloatingButton from '../../../../components/FloatingButton.svelte';
 	import Header from '../../../../components/Header.svelte';
+	import Timer from '../../../../components/Timer.svelte';
 	import WeightInput from '../../../../components/WeightInput.svelte';
 
 	let subHeading = 'Up next: Pec Fly';
+	let resting = true;
 
 	let exercise: WorkoutExercise = {
 		type: 'workoutExercise',
@@ -27,9 +29,15 @@
 	<main class="h-full overflow-y-scroll p-8">
 		<Header heading={exercise.name} {subHeading} exit={true} href="/" />
 
-		<div class="mb-10">
-			<ExerciseSets {exercise} />
-		</div>
+		{#if resting}
+			<div class="mb-10 px-8">
+				<Timer />
+			</div>
+		{:else}
+			<div class="mb-10">
+				<ExerciseSets {exercise} />
+			</div>
+		{/if}
 
 		<div class="mb-32">
 			<WeightInput {exercise} />
