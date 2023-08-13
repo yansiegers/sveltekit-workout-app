@@ -21,12 +21,9 @@
 	function timer() {
 		if (timeRemaining <= 0) {
 			clearInterval(interval);
-			console.log('interval cleared');
 		} else {
 			timeRemaining--;
 		}
-
-		console.log(timeRemaining);
 
 		let timeRested = restingTime - timeRemaining;
 
@@ -49,9 +46,8 @@
 	<svg class="donut" width="300" height="100%" viewBox="0 0 42 42">
 		<circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff" />
 
-		<!--  GREEN  -->
 		<circle
-			id="remaining-cicle"
+			id="remaining-circle"
 			cx="21"
 			cy="21"
 			r="15.91549430918954"
@@ -63,7 +59,6 @@
 			bind:this={remainingCircle}
 		/>
 
-		<!--  PURPLE  -->
 		<circle
 			id="rested-circle"
 			cx="21"
@@ -86,42 +81,14 @@
 </div>
 
 <style>
-	/* @import url(https://fonts.googleapis.com/css?family=Montserrat:400); */
-
-	/* body {
-		font: 16px/1.4em 'Montserrat', Arial, sans-serif;
-	} */
-	/* * {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	} */
 	.chart-text {
-		/*font: 16px/1.4em "Montserrat", Arial, sans-serif;*/
 		fill: #000;
-		/* -moz-transform: translateY(0.25em);
-		-ms-transform: translateY(0.25em);
-		-webkit-transform: translateY(0.25em); */
-		transform: translateY(0.25em);
 	}
 
 	.chart-number {
 		font-size: 0.5em;
 		line-height: 1;
 		text-anchor: middle;
-		/* -moz-transform: translateY(-0.25em);
-		-ms-transform: translateY(-0.25em);
-		-webkit-transform: translateY(-0.25em); */
-		transform: translateY(-0.25em);
+		dominant-baseline: middle;
 	}
-
-	/* .chart-label {
-		font-size: 0.2em;
-		text-transform: uppercase;
-		text-anchor: middle; */
-	/* -moz-transform: translateY(0.7em);
-		-ms-transform: translateY(0.7em);
-		-webkit-transform: translateY(0.7em); */
-	/* transform: translateY(0.7em);
-	} */
 </style>
