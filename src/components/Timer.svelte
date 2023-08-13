@@ -1,10 +1,10 @@
 <script lang="ts">
-	let val1D: SVGCircleElement;
-	let val2D: SVGCircleElement;
-	let totalValue: SVGTextElement;
+	let restedCircle: SVGCircleElement;
+	let remainingCircle: SVGCircleElement;
+	let timeValue: SVGTextElement;
 
 	let restingTime = 120;
-	let timeLeft = restingTime;
+	let timeRemaining = restingTime;
 	let interval: NodeJS.Timer;
 
 	function start() {
@@ -13,30 +13,27 @@
 	}
 
 	function timer() {
-		if (timeLeft <= 0) {
+		if (timeRemaining <= 0) {
 			clearInterval(interval);
 			console.log('interval cleared');
 		} else {
-			timeLeft--;
+			timeRemaining--;
 		}
 
-		console.log(timeLeft);
+		console.log(timeRemaining);
 
-		let val1 = restingTime - timeLeft;
-		let val2 = timeLeft;
+		let timeRested = restingTime - timeRemaining;
 
-		var per1 = (val1 / restingTime) * 100;
-		var per2 = (val2 / restingTime) * 100;
+		var percentageRested = (timeRested / restingTime) * 100;
+		var percentageRemaining = (timeRemaining / restingTime) * 100;
 
 		var offset = 25;
 
-		// totalValue.textContent = new Date(timeLeft * 1000).toISOString().substring(14, 19);
+		restedCircle.style.strokeDasharray = percentageRested + ' ' + (100 - percentageRested);
+		restedCircle.style.strokeDashoffset = offset.toString();
 
-		val1D.style.strokeDasharray = per1 + ' ' + (100 - per1);
-		val1D.style.strokeDashoffset = offset.toString();
-
-		val2D.style.strokeDasharray = per2 + ' ' + (100 - per2);
-		val2D.style.strokeDashoffset = (100 - per1 + offset).toString();
+		remainingCircle.style.strokeDasharray = percentageRemaining + ' ' + (100 - percentageRemaining);
+		remainingCircle.style.strokeDashoffset = (100 - percentageRested + offset).toString();
 	}
 </script>
 
@@ -48,7 +45,7 @@
 
 		<!--  GREEN  -->
 		<circle
-			id="donut-segment2"
+			id="remaining-cicle"
 			cx="21"
 			cy="21"
 			r="15.91549430918954"
@@ -57,12 +54,12 @@
 			stroke-width="6"
 			stroke-dasharray="100 100"
 			stroke-dashoffset="0"
-			bind:this={val2D}
+			bind:this={remainingCircle}
 		/>
 
 		<!--  PURPLE  -->
 		<circle
-			id="donut-segment1"
+			id="rested-circle"
 			cx="21"
 			cy="21"
 			r="15.91549430918954"
@@ -71,12 +68,12 @@
 			stroke-width="1"
 			stroke-dasharray="0 100"
 			stroke-dashoffset="25"
-			bind:this={val1D}
+			bind:this={restedCircle}
 		/>
 
 		<g class="chart-text">
-			<text x="50%" y="50%" class="chart-number" id="totalValue" bind:this={totalValue}>
-				{new Date(timeLeft * 1000).toISOString().substring(14, 19)}
+			<text x="50%" y="50%" class="chart-number" id="time-value" bind:this={timeValue}>
+				{new Date(timeRemaining * 1000).toISOString().substring(14, 19)}
 			</text>
 		</g>
 	</svg>
