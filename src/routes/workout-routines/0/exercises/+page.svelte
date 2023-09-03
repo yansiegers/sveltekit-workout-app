@@ -33,16 +33,24 @@
 			<div class="mb-10 px-8">
 				<Timer bind:resting />
 			</div>
+
+			<FloatingButton
+				text="Rested!"
+				href="?"
+				on:click={() => {
+					resting = false;
+				}}
+			/>
 		{:else}
 			<div class="mb-10">
 				<ExerciseSets {exercise} bind:checked={resting} />
 			</div>
+
+			<FloatingButton text="Next exercise!" href="?" />
 		{/if}
 
 		<div class="mb-32">
 			<WeightInput {exercise} />
 		</div>
-
-		<FloatingButton text="Next exercise!" href="?" />
 	</main>
 </div>
