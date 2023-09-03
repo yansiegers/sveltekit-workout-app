@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
 	import SetButton from './SetButton.svelte';
+	import SetIndicator from './SetIndicator.svelte';
 
 	export let exercise: WorkoutExercise;
 	export let checked = false;
@@ -15,22 +16,29 @@
 		name: string;
 		weight: number;
 	}
+
+	function addSet() {
+		setsCount++;
+		console.log(setsCount);
+	}
 </script>
 
 <p class="mb-3 text-center">{exercise.sets}x {exercise.reps} repetitions</p>
 <div class="flex flex-wrap justify-center gap-4">
 	{#each Array(setsCount) as _, i}
-		<SetButton bind:checked>
-			{#if finishedSets.length > i}
+		{#if finishedSets.length > i}
+			<SetIndicator>
 				<span><Icon name="check" size="2xl" /></span>
 				<span>{finishedSets[i].toLocaleString()} kg</span>
-			{:else if finishedSets.length <= i}
+			</SetIndicator>
+		{:else if finishedSets.length <= i}
+			<SetButton bind:checked>
 				<span class="text-2xl">{i + 1}</span>
-			{/if}
-		</SetButton>
+			</SetButton>
+		{/if}
 	{/each}
 
-	<SetButton>
+	<SetIndicator on:click={addSet}>
 		<span><Icon name="plus" size="2xl" /></span>
-	</SetButton>
+	</SetIndicator>
 </div>
