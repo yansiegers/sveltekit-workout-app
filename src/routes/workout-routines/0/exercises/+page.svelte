@@ -8,6 +8,8 @@
 	let subHeading = 'Up next: Pec Fly';
 	let resting = false;
 
+	let lastExercise = true;
+
 	let exercise: WorkoutExercise = {
 		type: 'workoutExercise',
 		sets: 4,
@@ -46,7 +48,12 @@
 				<ExerciseSets {exercise} bind:checked={resting} />
 			</div>
 
-			<FloatingButton text="Next exercise!" href="?" />
+			{#if lastExercise}
+				<FloatingButton text="Round up!" href="/" />
+			{:else}
+				<FloatingButton text="Next exercise!" href="?" />
+			{/if}
+
 		{/if}
 
 		<div class="mb-32">
