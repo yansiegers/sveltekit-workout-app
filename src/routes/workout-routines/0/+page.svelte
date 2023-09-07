@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FloatingButton from '../../../components/FloatingButton.svelte';
 	import Header from '../../../components/Header.svelte';
 	import OrderableExercisesList from '../../../components/OrderableExercisesList.svelte';
 
@@ -42,10 +43,6 @@
 			<OrderableExercisesList title="Workout" exercises={workoutExercises} />
 		</div>
 
-		<a
-			class="absolute bottom-2 left-1/2 border-2 border-black bg-white px-5 py-4 text-2xl uppercase"
-			style="transform: translate(-50%, -50%);"
-			href="?">Start</a
-		>
+		<FloatingButton text="Start" href="/workout-routines/0/exercises" />
 	</main>
 </div>
