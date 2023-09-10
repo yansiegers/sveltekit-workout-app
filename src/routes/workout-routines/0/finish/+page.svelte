@@ -1,6 +1,7 @@
 <script lang="ts">
 	import FloatingButton from '../../../../components/FloatingButton.svelte';
 	import Header from '../../../../components/Header.svelte';
+	import Icon from '../../../../components/Icon.svelte';
 	import OrderableExercisesList from '../../../../components/OrderableExercisesList.svelte';
 
 	interface WorkoutExercise {
@@ -41,6 +42,11 @@
 		<div class="mb-24">
 			<OrderableExercisesList title="Warming up" exercises={warmingUpExercises} />
 			<OrderableExercisesList title="Workout" exercises={workoutExercises} />
+			<div class="flex justify-center">
+				<button class="border-2 border-black bg-white px-3 py-2">
+					<Icon name="plus" />
+				</button>
+			</div>
 		</div>
 
 		<FloatingButton text="Finish!" href="/workout-routines/0/exercises" />
