@@ -39,13 +39,18 @@
 	<main class=" h-full overflow-y-scroll p-8">
 		<Header heading={workoutRoutine.name} {subHeading} exit={true} href="/" />
 
-		<div class="mb-24">
+		<div class="mb-28">
 			<OrderableExercisesList title="Warming up" exercises={warmingUpExercises} />
 			<OrderableExercisesList title="Workout" exercises={workoutExercises} />
+
 			<div class="flex justify-center">
 				<button class="border-2 border-black bg-white px-3 py-2">
 					<Icon name="plus" />
 				</button>
+			</div>
+
+			<div class="mt-16 flex justify-center">
+				<span class="text-center text-4xl">1:58:33</span>
 			</div>
 		</div>
 
