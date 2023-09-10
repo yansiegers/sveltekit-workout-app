@@ -49,7 +49,7 @@
 			</div>
 
 			{#if lastExercise}
-				<FloatingButton text="Round up!" href="/" />
+				<FloatingButton text="Round up!" href="finish" />
 			{:else}
 				<FloatingButton text="Next exercise!" href="?" />
 			{/if}
